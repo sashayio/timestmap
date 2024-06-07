@@ -1,3 +1,4 @@
+import { h } from 'preact';
 import { useState, useEffect } from 'preact/hooks';
 
 interface TimeSinceTimestampProps {
@@ -22,14 +23,17 @@ const TimeSinceTimestamp: preact.FunctionComponent<TimeSinceTimestampProps> = ({
   const weeksSinceTimestamp = Math.floor(daysSinceTimestamp / 7);
   const monthsSinceTimestamp = Math.floor(daysSinceTimestamp / 30); // Простое предположение: 30 дней в месяце
 
+  const cashEarned = hoursSinceTimestamp * 150;
+
   return (
     <div>
-      <p>Seconds since timestamp: {secondsSinceTimestamp}</p>
-      <p>Minutes since timestamp: {minutesSinceTimestamp}</p>
-      <p>Hours since timestamp: {hoursSinceTimestamp}</p>
-      <p>Days since timestamp: {daysSinceTimestamp}</p>
-      <p>Weeks since timestamp: {weeksSinceTimestamp}</p>
-      <p>Months since timestamp: {monthsSinceTimestamp}</p>
+      <p style={{ color: 'red' }}>⏳ Seconds since timestamp: {secondsSinceTimestamp}</p>
+      <p style={{ color: 'orange' }}>🕒 Minutes since timestamp: {minutesSinceTimestamp}</p>
+      <p style={{ color: 'yellow' }}>🕐 Hours since timestamp: {hoursSinceTimestamp}</p>
+      <p style={{ color: 'green' }}>📅 Days since timestamp: {daysSinceTimestamp}</p>
+      <p style={{ color: 'blue' }}>📆 Weeks since timestamp: {weeksSinceTimestamp}</p>
+      <p style={{ color: 'purple' }}>🗓️ Months since timestamp: {monthsSinceTimestamp}</p>
+      <p style={{ color: 'gold', fontWeight: 'bold' }}>💰: {cashEarned} ₽</p>
     </div>
   );
 };
