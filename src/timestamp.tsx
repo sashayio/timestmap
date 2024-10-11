@@ -26,7 +26,7 @@ const TimeSinceTimestamp: preact.FunctionComponent<TimeSinceTimestampProps> = ({
   const formattedDate = titleDate.toLocaleDateString('ru-RU'); // Форматирует дату как 19.09.2024
   const formattedTime = titleDate.toLocaleTimeString('ru-RU'); // Форматирует время как 09:17:47
 
-  const titleDateString = `${formattedDate}, ${formattedTime}`;
+  const titleDateString = `${formattedDate} ${formattedTime}`;
 
   return (
     <div>
