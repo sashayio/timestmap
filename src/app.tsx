@@ -1,7 +1,7 @@
 import './app.css'
 import TimeSinceTimestamp from './timestamp'
 
-const timestamp = 1746316800;
+const timestamp = 1746997200;
 
 export function App() {
   return (
